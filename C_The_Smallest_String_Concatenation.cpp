@@ -100,14 +100,7 @@ int pow(int base, int exp, int mod) {
 const int mod = 1000000007;
 
 bool comp(string &s1, string &s2) {
-    int n1 = sz(s1), n2 = sz(s2);
-    int n = min(n1, n2);
-    rep(i, 0, n) {
-        if(s1[i] < s2[i]) return s1 < s2;
-        if(s1[i] > s2[i]) return s1 > s2;
-    }
-    if(n1 > n2) return s1 > s2;
-    return s1 < s2;
+    return s1 + s2 < s2 + s1;
 }
 void solve(){
     int n = nxt();
